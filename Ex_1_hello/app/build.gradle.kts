@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.ex_2_linearlayout"
+    namespace = "com.example.hello"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.ex_2_linearlayout"
+        applicationId = "com.example.hello"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
