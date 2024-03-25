@@ -58,7 +58,7 @@
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ngotrungtin1992003@gmail.com"
+                    android:text="tin.ntru.63cntt@ntu.edu.vn"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="@+id/textView"
                     app:layout_constraintStart_toStartOf="@+id/textView"
@@ -139,12 +139,10 @@
                         android:paddingStart="20dp"
                         android:text="Phone: 0123456789"
                         android:textAlignment="viewStart"
-
                         app:layout_constraintTop_toBottomOf="parent"
                         tools:layout_editor_absoluteX="-40dp" />
 
                 </LinearLayout>
-
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
