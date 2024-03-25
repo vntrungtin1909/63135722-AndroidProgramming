@@ -207,7 +207,15 @@ public class Choi2Nguoi extends JFrame {
 	}
 	
 	private static void reset() {
-		
+		arr = new char[3][3];
+		winner = " ";
+		luotDi.setText("Lượt của X");
+		luotDi.setForeground(Color.black);
+		turn = 'X';
+		over = true;
+		for (JLabel label : ds) {
+			label.setText(" ");
+		}
 	}
 	
 }
