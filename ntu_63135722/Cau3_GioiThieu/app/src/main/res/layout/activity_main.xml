@@ -102,7 +102,7 @@
                         android:drawableStart="@drawable/ic_2"
                         android:drawablePadding="20dp"
                         android:paddingStart="20dp"
-                        android:text="tin.ntru.63cntt@ntu.edu.vn"
+                        android:text="MSSV: 63135722"
                         android:textAlignment="viewStart"
 
                         app:layout_constraintTop_toBottomOf="parent"
