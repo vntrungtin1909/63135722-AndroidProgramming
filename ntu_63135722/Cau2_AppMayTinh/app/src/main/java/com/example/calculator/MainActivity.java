@@ -88,9 +88,54 @@ public class MainActivity extends AppCompatActivity {
         nums.add(num8);
         nums.add(num9);
 
-        
+        for (Button b : nums) {
+            b.setOnClickListener(view -> {
+                if (!screen.getText().toString().equals("0")) {
+                    screen.setText(screen.getText().toString() + b.getText().toString());
+                }
+                else {
+                    screen.setText(b.getText().toString());
+                }
+            });
+        }
 
 
+        ArrayList<Button> ops = new ArrayList<>();
+        ops.add(chia);
+        ops.add(nhan);
+        ops.add(tru);
+        ops.add(cong);
+        for (Button b : ops) {
+            b.setOnClickListener(view -> {
+                first = Double.parseDouble(screen.getText().toString());
+                operation = b.getText().toString();
+                screen.setText("0");
+            });
+        }
 
+        equal.setOnClickListener(view -> {
+            double second = Double.parseDouble(screen.getText().toString());
+            double result;
+            switch (operation) {
+                case "/":
+                    result = first / second;
+                    break;
+                case "X":
+                    result = first * second;
+                    break;
+                case "-":
+                    result = first - second;
+                    break;
+                default:
+                    result = first + second;
+            }
+            screen.setText(String.valueOf(result));
+            first = result;
+        });
     }
+
+
+
+
+
 }
