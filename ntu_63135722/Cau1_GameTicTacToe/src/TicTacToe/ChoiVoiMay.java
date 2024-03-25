@@ -61,7 +61,60 @@ public class ChoiVoiMay extends JFrame {
                 label.setBackground(Color.white);
                 label.setFont(new Font("Tahoma", Font.BOLD, 60));
                 label.setHorizontalAlignment(SwingConstants.CENTER);
-               
+                int m = i;
+                int n = j;
+                label.addMouseListener(new MouseListener() {
+
+                    @Override
+                    public void mouseReleased(MouseEvent e) {
+
+                    }
+
+                    @Override
+                    public void mousePressed(MouseEvent e) {
+
+                    }
+
+                    @Override
+                    public void mouseExited(MouseEvent e) {
+
+                    }
+
+                    @Override
+                    public void mouseEntered(MouseEvent e) {
+
+                    }
+
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                    	 if (over) {
+                             if (label.getText().toString().equals(" ")) {
+                                 label.setText(String.valueOf(turn));
+                                 arr[m][n] = turn;
+                                     label.setForeground(Color.blue);
+                                     if (checkWinner() && winner.equals("X")) {
+                                         luotDi.setText("X thắng");
+                                         luotDi.setForeground(Color.blue);
+                                         over = false;
+                                     } else if (checkWinner() && winner.equals("O")) {
+                                         luotDi.setText("O thắng");
+                                         luotDi.setForeground(Color.red);
+                                         over = false;
+                                     } else if (!draw()) {
+                                         luotDi.setText("Hòa");
+                                         over = false;
+                                     }
+                                     if (over) {
+                                    	 turn = 'O';
+                                         May();
+                                     }
+                                 
+                             } else {
+                                 luotDi.setText("Chọn vị trí khác");
+                             }
+                         }
+                     }
+                });
                 ds.add(label);
                 panel.add(label);
             }
@@ -77,11 +130,34 @@ public class ChoiVoiMay extends JFrame {
         btnNew.setBackground(Color.black);
         btnNew.setForeground(Color.white);
         btnNew.setFont(new Font("Tahoma", Font.BOLD, 18));
-        
+        btnNew.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                reset();
+            }
+        });
         p.add(btnNew);
 
         add(p, BorderLayout.SOUTH);
         setVisible(true);
+	}
+	
+	private static boolean checkWinner() {
+		boolean win = false;
+		return win;
+	}
+	
+	private static boolean draw() {
+		boolean draw = false;
+		return draw;
+	}
+	
+	private static void reset() {
+		
+	}
+	
+	private static void May() {
+		
 	}
 
 }
