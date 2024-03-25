@@ -198,7 +198,31 @@ public class ChoiVoiMay extends JFrame {
 	}
 	
 	private static void May() {
-		
+		 Random random = new Random();
+
+         while (true) {
+             int row = random.nextInt(3);
+             int col = random.nextInt(3);
+             if (arr[row][col] == 0) {
+                 arr[row][col] = turn;
+                 ds.get(row * 3 + col).setText(String.valueOf(turn));
+                 ds.get(row * 3 + col).setForeground(Color.red);
+                 if (checkWinner() && winner.equals("X")) {
+                     luotDi.setText("X thắng");
+                     luotDi.setForeground(Color.blue);
+                     over = false;
+                 } else if (checkWinner() && winner.equals("O")) {
+                     luotDi.setText("O thắng");
+                     luotDi.setForeground(Color.red);
+                     over = false;
+                 } else if (!draw()) {
+                     luotDi.setText("Hòa");
+                     over = false;
+                 }
+                 turn = 'X';;
+                 break;
+             }
+         }
 	}
 
 }
