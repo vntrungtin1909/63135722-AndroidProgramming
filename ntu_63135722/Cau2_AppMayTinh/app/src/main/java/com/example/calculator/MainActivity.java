@@ -48,6 +48,34 @@ public class MainActivity extends AppCompatActivity {
 
         TextView screen = findViewById(R.id.screen);
 
+        ac.setOnClickListener(view -> {
+            first = 0;
+            screen.setText("0");
+        });
+
+        off.setOnClickListener(view -> screen.setVisibility(View.GONE));
+        on.setOnClickListener(view -> {
+            screen.setVisibility(View.VISIBLE);
+            screen.setText("0");
+        });
+
+        del.setOnClickListener(view -> {
+            String num = screen.getText().toString();
+            if (num.length() > 1) {
+                screen.setText(num.substring(0, num.length() - 1));
+            }
+            else if (num.length() == 1 && !num.equals("0")) {
+                screen.setText("0");
+            }
+        });
+
+        point.setOnClickListener(view -> {
+            if (!screen.getText().toString().contains(".")) {
+                screen.setText(screen.getText().toString() + ".");
+            }
+        });
+
+
         ArrayList<Button> nums = new ArrayList<>();
         nums.add(num0);
         nums.add(num1);
@@ -59,6 +87,10 @@ public class MainActivity extends AppCompatActivity {
         nums.add(num7);
         nums.add(num8);
         nums.add(num9);
+
+        
+
+
 
     }
 }
