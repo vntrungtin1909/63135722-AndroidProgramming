@@ -158,11 +158,51 @@ public class Choi2Nguoi extends JFrame {
 	
 	private static boolean checkWinner() {
 		boolean win = false;
+		if (arr[0][0] == arr[0][1] && arr[0][0] == arr[0][2] && arr[0][0] != 0) {
+			win = true;
+			winner = String.valueOf(arr[0][0]);
+		}
+		else if (arr[1][0] == arr[1][1] && arr[1][0] == arr[1][2] && arr[1][0] != 0) {
+			win = true;
+			winner = String.valueOf(arr[1][0]);
+		}
+		else if (arr[2][0] == arr[2][1] && arr[2][0] == arr[2][2] && arr[2][0] != 0) {
+			win = true;
+			winner = String.valueOf(arr[2][0]);
+		}
+		else if (arr[0][0] == arr[1][0] && arr[0][0] == arr[2][0] && arr[0][0] != 0) {
+			win = true;
+			winner = String.valueOf(arr[0][0]);
+		}
+		else if (arr[0][1] == arr[1][1] && arr[0][1] == arr[2][1] && arr[0][1] != 0) {
+			win = true;
+			winner = String.valueOf(arr[0][1]);
+		}
+		else if (arr[0][2] == arr[1][2] && arr[0][2] == arr[2][2] && arr[0][2] != 0) {
+			win = true;
+			winner = String.valueOf(arr[0][2]);
+		}
+		else if (arr[0][0] == arr[1][1] && arr[0][0] == arr[2][2] && arr[0][0] != 0) {
+			win = true;
+			winner = String.valueOf(arr[0][0]);
+		}
+		else if (arr[2][0] == arr[1][1] && arr[2][0] == arr[0][2] && arr[2][0] != 0) {
+			win = true;
+			winner = String.valueOf(arr[2][0]);
+		}
 		return win;
 	}
 	
 	private static boolean draw() {
 		boolean draw = false;
+		for (char[] a : arr) {
+			for (char b : a) {
+				if (b == 0) {
+					draw = true;
+					break;
+				}
+			}
+		}
 		return draw;
 	}
 	
