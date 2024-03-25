@@ -36,6 +36,7 @@ public class Menu extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new Choi2Nguoi().setVisible(true);
+				setVisible(false);
 
 			}
 		});
