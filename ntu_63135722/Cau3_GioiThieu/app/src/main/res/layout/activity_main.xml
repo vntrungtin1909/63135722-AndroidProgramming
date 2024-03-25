@@ -84,7 +84,7 @@
                         android:drawableStart="@drawable/ic_2"
                         android:drawablePadding="20dp"
                         android:paddingStart="20dp"
-                        android:text=""
+                        android:text="Trường Đại học Nha Trang"
                         android:textAlignment="viewStart"
 
                         app:layout_constraintTop_toBottomOf="parent"
